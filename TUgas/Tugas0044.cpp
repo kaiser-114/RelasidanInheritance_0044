@@ -1,0 +1,27 @@
+using namespace std;
+#include <iostream>
+#include <vector>
+#include <string>
+
+// Base Class
+class User {
+protected:
+    static int globalId; // Static member untuk auto-increment ID
+    int id;
+    string nama;
+    string email;
+
+public:
+    User(string pNama, string pEmail) : nama(pNama), email(pEmail) {
+        id = generateId();
+    }
+
+    // Member function untuk generate ID secara otomatis
+    int generateId() {
+        return ++globalId;
+    }
+
+    // Getter untuk kebutuhan display
+    int getId() { return id; }
+    string getNama() { return nama; }
+};
