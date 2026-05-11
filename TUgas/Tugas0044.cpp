@@ -87,4 +87,23 @@ public:
     }
 };
 
-int main() {}
+int main() {
+    // Membuat Admin
+    Admin adminUtama("Leoscythe", "admin@mail.ac.umy.id");
+
+    // Membuat beberapa Member
+    vector<Member> listMember;
+    listMember.push_back(Member("Illa", "illa@mail.com"));
+    listMember.push_back(Member("Yuda", "yuda@mail.com"));
+
+    // Admin melihat semua member
+    adminUtama.showAllMember(listMember);
+
+    // Admin menonaktifkan salah satu member (ID 2)
+    adminUtama.toggleActivationMember(listMember, 2);
+
+    // Cek profil member setelah diubah admin
+    listMember[1].showProfile();
+
+    return 0;
+}
